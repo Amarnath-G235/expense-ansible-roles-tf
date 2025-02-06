@@ -1,0 +1,17 @@
+- name: install nginx and run
+  hosts: all 
+  become: yes
+  serial: 3
+  vars_files:
+   - /var/expense/credentials_nginx.yaml
+  tasks:
+  - name: installing nginx
+    ansible.builtin.package:
+      name: nginx
+      state: present
+
+  - name: Run nginx
+    ansible.builtin.service:
+      name: nginx
+      state: started
+      enabled: yes

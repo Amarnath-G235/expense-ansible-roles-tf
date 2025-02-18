@@ -8,5 +8,5 @@
   vars_files:
   - "variables-{{ environment }}.yaml"
   roles:
-  - "{{ component }}"  # backend
+  - "{{ component }}"  
   
